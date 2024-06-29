@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <section class="login-form">
+        <h1>MZ의 스킬에서 사용할<p>프로필을 설정해주세요.</p></h1>
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="name" id="name" autocomplete="off" required>
+                <label for="name">닉네임</label>
+            </div>
+            <div class="int-area">
+                <input type="number" name="birth" id="birth" autocomplete="off" required>
+                <label for="birth">생년월일</label>
+            </div>
+            <div class="int-area">
+                <label for="profile-image">프로필 이미지</label>
+            </div>
+            <div class="container" id="profile-image">
+                <div class="box"><img src="../images/profile/1.png" alt="이미지 1"></div>
+                <div class="box"><img src="../images/profile/2.png" alt="이미지 2"></div>
+                <div class="box"><img src="../images/profile/3.png" alt="이미지 3"></div>
+                <div class="box"><img src="../images/profile/4.png" alt="이미지 4"></div>
+                <div class="box"><img src="../images/profile/5.png" alt="이미지 5"></div>
+                <div class="box"><img src="../images/profile/6.png" alt="이미지 6"></div>
+                <div class="box"><img src="../images/profile/7.png" alt="이미지 7"></div>
+                <div class="box"><img src="../images/profile/8.png" alt="이미지 8"></div>
+                <div class="box"><img src="../images/profile/9.png" alt="이미지 9"></div>
+                <div class="box"><img src="../images/profile/10.png" alt="이미지 10"></div>
+                <div class="box"><img src="../images/profile/11.png" alt="이미지 11"></div>
+                <div class="box"><img src="../images/profile/12.png" alt="이미지 12"></div>
+                <div class="box"><img src="../images/profile/13.png" alt="이미지 13"></div>
+                <div class="box"><img src="../images/profile/14.png" alt="이미지 14"></div>
+                <div class="box"><img src="../images/profile/15.png" alt="이미지 15"></div>
+                <div class="box"><img src="../images/profile/16.png" alt="이미지 16"></div>
+                <div class="box"><img src="../images/profile/17.png" alt="이미지 17"></div>
+                <div class="box"><img src="../images/profile/18.png" alt="이미지 18"></div>
+                <div class="box"><img src="../images/profile/19.png" alt="이미지 19"></div>
+                <div class="box"><img src="../images/profile/20.png" alt="이미지 20"></div>
+                <div class="box"><img src="../images/profile/21.png" alt="이미지 21"></div>
+                <div class="box"><img src="../images/profile/22.png" alt="이미지 22"></div>
+                <div class="box"><img src="../images/profile/23.png" alt="이미지 23"></div>
+                <div class="box"><img src="../images/profile/24.png" alt="이미지 24"></div>
+                <div class="box"><img src="../images/profile/25.png" alt="이미지 25"></div>
+                <div class="box"><img src="../images/profile/26.png" alt="이미지 26"></div>
+                <div class="box"><img src="../images/profile/27.png" alt="이미지 27"></div>
+                <div class="box"><img src="../images/profile/28.png" alt="이미지 28"></div>
+                <div class="box"><img src="../images/profile/29.png" alt="이미지 29"></div>
+                <div class="box"><img src="../images/profile/30.png" alt="이미지 30"></div>
+            </div>
+            <div class="btn-area">
+                <button id="btn" type="submit">다음으로</button>
+            </div>
+        </form>
+        
+    </section>
+
+    <script src="../js/script.js">       
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+        
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                }, 1500);
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                }, 1500);
+            }
+        });
+    </script>    
+</body>
+</html>
