@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,6 +11,7 @@
     <section class="login-form">
         <h1>회원가입</h1>
         <form action="">
+            {% csrf_token %}
             <div class="int-area">
                 <input type="text" name="name" id="name" autocomplete="off" required>
                 <label for="name">이름</label>
@@ -17,9 +19,9 @@
             <div class="int-area">
                 <input type="text" name="id" id="id" autocomplete="off" required>
                 <label for="id">아이디
-                    <div class="btn-area">
+                    <!-- <div class="btn-area">
                         <button id="btn" type="button">중복확인</button>
-                    </div>
+                    </div> -->
                 </label>
             </div>
             <div class="int-area">
