@@ -9,25 +9,31 @@ body {
 
 .container {
     text-align: center;
-    background-color: #FBF8FE;
+    background-color: #fbf8fe;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
 
-.header p {
-    font-size: 22px;
+.card-title {
+    font-size: 18px;
     color: #454347;
-    margin-top: 20px;
+    margin-top: 40px;
     font-weight:600;
+    line-height: 160%;
     text-align: left;
+    width: 338px;
+    margin-bottom: 20px;
 }
 
-.header sub-text {
+.header {
     font-size: 12px;
     color: #A39FA6;
     margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 20px;
 }
 
 .card-container {
@@ -38,28 +44,36 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #F9F9F929;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
-    width: 227px;
-    height: 345px;
+    width: 220px;
+    height: 340px;
     justify-content: center;
 }
 
 .card-image {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 10px;
     margin-top:20px;
+}
+.crown-image {
+    position: absolute;
+    top: 10px; /* 적절한 위치 조정을 위해 값 조절 */
+    right: 60px; /* 적절한 위치 조정을 위해 값 조절 */
+    width: 36px; /* 왕관 이미지 크기 조절 */
+    height: 30px; /* 왕관 이미지 크기 조절 */
 }
 
 .card h3 {
     font-size: 20px;
     color: #454347;
     margin: 10px 0;
+    margin-top: 20px;
 }
 
 .card-subtitle {
@@ -72,6 +86,8 @@ body {
     font-size: 14px;
     color: #555;
     margin: 10px 0;
+    margin-top: 20px;
+    line-height: 180%;
 }
 
 .card-buttons {
@@ -82,36 +98,31 @@ body {
 
 .button {
     background-color: #fff;
-    border: 2px solid #a363ff;
+    border: 2px solid #8520EA;
     border-radius: 20px;
     padding: 5px 10px;
-    color: #a363ff;
+    color: #8520EA;
     font-size: 12px;
     cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .arrow-container {
     position: absolute;
     top: 50%;
-    right: -30px;
+    right: -10px;
     transform: translateY(-50%);
 }
 
-.arrow-button {
-    background-color: #a363ff;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+.arrow-image {
+    width: 40px; /* 화살표 이미지 크기 조절 */
+    height: 40px; /* 화살표 이미지 크기 조절 */
 }
 
 .footer {
     text-align: center;
 }
-
 .dots {
     display: flex;
     justify-content: center;
@@ -128,23 +139,27 @@ body {
 }
 
 .dot.active {
-    background-color: #a363ff;
+    background-color: #8520EA;
 }
 
 .footer-links {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .footer-link {
-    color: #a363ff;
+    color: #8520EA;
     text-decoration: none;
-    font-size: 14px;
-    display: block;
-    margin: 5px 0;
+    font-size: 12px;
+    margin: 20px 20px; 
+}
+.gray-link {
+    color: #A39FA6;
 }
 
 .submit-button {
-    background-color: #a363ff;
+    background-color: #8520EA;
     border: none;
     border-radius: 5px;
     color: white;
@@ -155,5 +170,5 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #9229e7;
+    background-color: #8520EA;
 }
