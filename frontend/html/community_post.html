@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="../css/community_post.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="back-arrow"><img src="../images/profile_edit/arrow left.png" alt="Back"></a>
+            <h1>커뮤니티</h1>
+            <div class="header-icons">
+                <a href="#"><img src="../images/community_post/vertical.png" alt="More Options"></a>
+            </div>
+        </header>
+
+        <div class="post">
+            <div class="post-header">
+                <span class="category-tag">교육 · 학문</span>
+                <div class="post-profile">
+                    <img src="../images/community_post/community_profile.png" alt="profile-image">
+                    <div class="post-profile-info">
+                        <span class="profile-name">히히 크로와상</span>
+                        <span class="profile-time">2일전</span>
+                    </div>
+                </div>
+                <h2>저 포함 5명 같이 토익 준비하실 분들 구해요</h2>
+                <p>같이 하면 혼자 하는 것보다 덜 풀어질 것 같아서 함께 토익 준비하실 분들 구합니다.
+                    오픈채팅방 만들어서 주 3회 이상 인증하면 좋을 것 같아요! </p>
+            </div>
+            <div class="post-stats">
+                <span>♡ 21</span>
+                <span>☆ 5</span>
+            </div>
+        </div>
+
+        <div class="comments">
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>밍기적 고양이</span>
+                    <p>저요! 2번 인증으로 할 예정입니다.</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>재빠른 고양이</span>
+                    <p>저요 ~!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>당당 고양이</span>
+                    <p>저요</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>매콤한 고양이</span>
+                    <p>저도요!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>히히 크로와상</span>
+                    <p>마감하겠습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="comment-form">
+            <div class="comment-input">
+                <input type="text" id="comment-text" placeholder="댓글을 작성해 보세요." required>
+                <button type="submit"><img src="../images/community_post/comment.png" alt="Send"></button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/community_post.js"></script>
+    <script>
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 폼 제출 방지
+
+            const commentText = document.getElementById('comment-text').value;
+
+            // 백엔드 엔드포인트 URL을 입력
+            const url = 'YOUR_BACKEND_ENDPOINT';
+
+            // 서버로 데이터 전송
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}' // Django CSRF 토큰 사용 시
+                },
+                body: JSON.stringify({ comment: commentText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const commentsSection = document.getElementById('comments-section');
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.innerHTML = `
+                        <img src="../images/community_post/community_profile2.png" alt="User">
+                        <div class="comment-content">
+                            <span>새로운 사용자</span>
+                            <p>${commentText}</p>
+                        </div>
+                    `;
+                    commentsSection.appendChild(newComment);
+                    document.getElementById('comment-form').reset();
+                } else {
+                    alert('댓글 작성에 실패했습니다.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
