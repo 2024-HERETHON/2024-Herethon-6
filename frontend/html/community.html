@@ -11,22 +11,21 @@
         <header>
             <h1>커뮤니티</h1>
             <div class="icon">
-                <a href="">
+                <a href="user_profile.html">
                     <img src="../images/community/user.png" alt="User Icon">
                 </a>
             </div>
         </header>
 
-        <div class="category-section">
+        <form action="YOUR_BACKEND_ENDPOINT" method="GET" class="category-sort-form"> <!-- 백엔드 엔드포인트로 데이터를 전송 -->
             <div class="category-section">
-                <div class="category">카테고리 <span class="category-count">2</span></div>
+                <div class="category">교육.학문</div>
+                <select name="sort" class="sort-dropdown">
+                    <option value="인기순">인기순</option>
+                    <option value="추천순">추천순</option>
+                </select>
             </div>
-            <select class="sort-dropdown">
-                <option value="인기순">인기순</option>
-                <option value="추천순">추천순</option>
-                <!-- 추가 정렬 옵션 -->
-            </select>
-        </div>
+        </form>
 
         <div class="posts">
             <a href="post1.html" class="post">
@@ -44,7 +43,7 @@
                     <span class="tag">피트니스 · 웰빙</span>
                 </div>
                 <div class="post-stats">
-                    <span>♡14☆10</span>
+                    <span>♡14 ☆10</span>
                 </div>
             </a>
             <a href="post3.html" class="post">
@@ -62,25 +61,25 @@
                     <span class="tag">피트니스 · 웰빙</span>
                 </div>
                 <div class="post-stats">
-                    <span> ♡2 ☆1</span>
+                    <span>♡2 ☆1</span>
                 </div>
             </a>
         </div>
 
-        <a href="#" class="write-button">
-            <img src="../images/community/writing.png">
+        <a href="write_post.html" class="write-button">
+            <img src="../images/community/writing.png" alt="Write Icon">
         </a>
 
         <nav class="bottom-nav">
-            <a href="#" class="nav-item">
+            <a href="main.html" class="nav-item">
                 <img src="../images/community/home.png" alt="Community Icon">
                 <span>메인화면</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="teaching.html" class="nav-item">
                 <img src="../images/community/teaching.png" alt="Community Icon">
                 <span>1:1 티칭</span>
             </a>
-            <a href="#" class="nav-item1">
+            <a href="community.html" class="nav-item1">
                 <img src="../images/community/chat_active.png" alt="Community Icon">
             </a>
         </nav>
