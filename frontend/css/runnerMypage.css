@@ -1,0 +1,32 @@
+html {
+  background-color: whitesmoke;
+}
+.backgroundContainer {
+  max-width: 420px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #fbf8fe;
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainContainer {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.topContainer {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.background {
+  background-color: #8520ea;
+  height: 123px;
+}
+.profileImage {
+  position: absolute;
+  top: 10%;
+  border: #8520ea;
+  border-style: dashed;
+}
