@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,6 +11,7 @@
     <section class="login-form">
         <h1>MZ의 스킬에서 사용할<p>프로필을 설정해주세요.</p></h1>
         <form action="">
+            {% csrf_token %}
             <div class="int-area">
                 <input type="text" name="name" id="name" autocomplete="off" required>
                 <label for="name">닉네임</label>

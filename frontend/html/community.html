@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="../css/community.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>커뮤니티</h1>
+            <div class="icon">
+                <a href="user_profile.html">
+                    <img src="../images/community/user.png" alt="User Icon">
+                </a>
+            </div>
+        </header>
+
+        <form action="YOUR_BACKEND_ENDPOINT" method="GET" class="category-sort-form"> <!-- 백엔드 엔드포인트로 데이터를 전송 -->
+            <div class="category-section">
+                <div class="category">교육.학문</div>
+                <select name="sort" class="sort-dropdown">
+                    <option value="인기순">인기순</option>
+                    <option value="추천순">추천순</option>
+                </select>
+            </div>
+        </form>
+
+        <div class="posts">
+            <a href="post1.html" class="post">
+                <p>저 포함 5명 같이 토익 준비하실 분들 구...</p>
+                <div class="tags">
+                    <span class="tag">교육 · 학문</span>
+                </div>
+                <div class="post-stats">
+                    <span>♡21 ☆5</span>
+                </div>
+            </a>
+            <a href="post2.html" class="post">
+                <p>바디프로필까지 D-32 !</p>
+                <div class="tags">
+                    <span class="tag">피트니스 · 웰빙</span>
+                </div>
+                <div class="post-stats">
+                    <span>♡14 ☆10</span>
+                </div>
+            </a>
+            <a href="post3.html" class="post">
+                <p>안 질리는 닭가슴살 찾았어요</p>
+                <div class="tags">
+                    <span class="tag">교육 · 학문</span>
+                </div>
+                <div class="post-stats">
+                    <span>♡6 ☆12</span>
+                </div>
+            </a>
+            <a href="post4.html" class="post">
+                <p>각자 인생책 3권씩 남기고 가기</p>
+                <div class="tags">
+                    <span class="tag">피트니스 · 웰빙</span>
+                </div>
+                <div class="post-stats">
+                    <span>♡2 ☆1</span>
+                </div>
+            </a>
+        </div>
+
+        <a href="write_post.html" class="write-button">
+            <img src="../images/community/writing.png" alt="Write Icon">
+        </a>
+
+        <nav class="bottom-nav">
+            <a href="main.html" class="nav-item">
+                <img src="../images/community/home.png" alt="Community Icon">
+                <span>메인화면</span>
+            </a>
+            <a href="teaching.html" class="nav-item">
+                <img src="../images/community/teaching.png" alt="Community Icon">
+                <span>1:1 티칭</span>
+            </a>
+            <a href="community.html" class="nav-item1">
+                <img src="../images/community/chat_active.png" alt="Community Icon">
+            </a>
+        </nav>
+    </div>
+
+    <script src="../js/community.js"></script>
+</body>
+</html>
