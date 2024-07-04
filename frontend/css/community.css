@@ -1,16 +1,21 @@
+html {
+    background-color: whitesmoke;
+  }
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    /* height: 100vh; */
+    margin: 0 auto;
     font-family: 'pretendard';
     background-color: #FBF8FE;
+    max-width: 420px;
 }
 
 .container {
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     background-color: #FBF8FE;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
