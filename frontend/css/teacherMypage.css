@@ -51,7 +51,6 @@ html {
   font-size: 12px;
   width: 52px;
   height: 20px;
-
   border-radius: 20px;
   border-color: #8520ea;
   border-style: solid;
@@ -106,4 +105,66 @@ html {
   margin-right: 10px;
   line-height: 30px;
   border-radius: 10px;
+}
+.middleMessage {
+  font-size: 14px;
+  color: #454347;
+  font-weight: bolder;
+}
+.middleContainerBox {
+  height: 160px;
+  width: 330px;
+  box-shadow: 0px 4px 4px 0px rgb(236, 232, 240);
+  margin: 0 auto;
+  text-align: left;
+  color: #6f6b72;
+  font-size: 13px;
+}
+.teachingPlanKeyword {
+  max-width: 95px;
+  font-size: 14px;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: #8520ea;
+  border-style: solid;
+  border-width: 1.7px;
+  line-height: 30px;
+  color: #8520ea;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 10px;
+}
+.planMessage {
+  display: flex;
+}
+.planContainer {
+  margin-bottom: 30px;
+
+  padding: 30px;
+  text-align: center;
+}
+.dot {
+  font-size: 10px;
+  color: #8520ea;
+  margin-right: 5px;
+}
+.planTitle {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #454347;
+  font-weight: bolder;
+  padding-left: 30px;
+}
+.myteach {
+  width: 185px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: #8520ea;
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+  line-height: 45px;
+  text-align: center;
+  transform: translate(110%, -750%);
 }
