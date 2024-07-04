@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile</title>
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/profile_edit.css">
 </head>
 <body>
     <section class="profile-form">
-        <h1>MZ의 스킬에서 사용할 <p>프로필을 설정해주세요.</p></h1>
+        <h1 class="profile-title">
+            <a href=""><img src="../images/profile_edit/arrow left.png" class="left-arrow"></a>
+            프로필 편집
+        </h1>
         <form action="" method="POST" id="profile-form">
             {% csrf_token %}
             <div class="profile-image-container">
@@ -18,6 +21,10 @@
                     <img src="../images/profile/camera.png" alt="Camera Icon">
                 </label>
                 <input type="file" id="profile-image-input" name="profile-image" accept="image/*" style="display:none;">
+            </div>
+            <div class="int-area">
+                <input type="email" name="name" id="name" autocomplete="off" required>
+                <label for="name">이메일</label>
             </div>
             <div class="int-area">
                 <input type="text" name="name" id="name" autocomplete="off" required>
@@ -29,7 +36,7 @@
                 <span id="birth-error" class="error-message" style="display:none; color: rgb(95, 45, 170);">생년월일은 1981.01.01 ~ 2010.12.31 <p></p>사이여야 합니다.</span>
             </div>
             <div class="btn-area">
-                <button id="btn" type="submit">다음으로</button>
+                <button id="btn" type="submit">수정하기</button>
             </div>
         </form>
     </section>
