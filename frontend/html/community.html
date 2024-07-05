@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,12 +20,13 @@
 
         <form action="YOUR_BACKEND_ENDPOINT" method="GET" class="category-sort-form"> <!-- 백엔드 엔드포인트로 데이터를 전송 -->
             <div class="category-section">
-                <div class="category">교육.학문</div>
-                <select name="sort" class="sort-dropdown">
+                <button type="button" class="category-button">교육.학문</button>
+                <select name="sort" class="sort-dropdown" onchange="this.form.submit()">
                     <option value="인기순">인기순</option>
                     <option value="추천순">추천순</option>
                 </select>
             </div>
+            <input type="hidden" name="category" id="category" value="교육.학문">
         </form>
 
         <div class="posts">
@@ -34,34 +36,25 @@
                     <span class="tag">교육 · 학문</span>
                 </div>
                 <div class="post-stats">
-                    <span>♡21 ☆5</span>
+                    <span><img src="../images/community/community1.png"></span>
                 </div>
             </a>
             <a href="post2.html" class="post">
-                <p>바디프로필까지 D-32 !</p>
-                <div class="tags">
-                    <span class="tag">피트니스 · 웰빙</span>
-                </div>
-                <div class="post-stats">
-                    <span>♡14 ☆10</span>
-                </div>
-            </a>
-            <a href="post3.html" class="post">
-                <p>안 질리는 닭가슴살 찾았어요</p>
+                <p>맞춤법 대결 *@*</p>
                 <div class="tags">
                     <span class="tag">교육 · 학문</span>
                 </div>
                 <div class="post-stats">
-                    <span>♡6 ☆12</span>
+                    <span><img src="../images/community/community2.png"></span>
                 </div>
             </a>
-            <a href="post4.html" class="post">
+            <a href="post3.html" class="post">
                 <p>각자 인생책 3권씩 남기고 가기</p>
                 <div class="tags">
-                    <span class="tag">피트니스 · 웰빙</span>
+                    <span class="tag">교육 · 학문</span>
                 </div>
                 <div class="post-stats">
-                    <span>♡2 ☆1</span>
+                    <span><img src="../images/community/community3.png"></span>
                 </div>
             </a>
         </div>
@@ -84,7 +77,49 @@
             </a>
         </nav>
     </div>
-
+<!-- 팝업 창 -->
+<div id="category-popup" class="popup">
+    <div class="popup-content">
+        <h2>카테고리를 선택하세요</h2>
+        <button type="button" class="category-option" data-category="기술.프로그래밍">기술.프로그래밍</button>
+        <button type="button" class="category-option" data-category="크리에이티브.디자인">크리에이티브.디자인</button>
+        <button type="button" class="category-option" data-category="언어.문학">언어.문학</button>
+        <button type="button" class="category-option" data-category="음악.예술">음악.예술</button>
+        <button type="button" class="category-option" data-category="비즈니스.마케팅">비즈니스.마케팅</button>
+        <button type="button" class="category-option" data-category="피트니스.웰빙">피트니스.웰빙</button>
+        <button type="button" class="category-option" data-category="생활 스킬">생활 스킬</button>
+        <button type="button" class="category-option" data-category="교육.학문">교육.학문</button>
+        <button type="button" class="close-popup">닫기</button>
+    </div>
+</div>
     <script src="../js/community.js"></script>
+    <script>
+        document.querySelector('.category-button').addEventListener('click', function() {
+            document.getElementById('category-popup').style.display = 'flex';
+            setTimeout(function() {
+                document.getElementById('category-popup').classList.add('show');
+            }, 10); // Slight delay to trigger CSS animation
+        });
+
+        document.querySelectorAll('.category-option').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var selectedCategory = this.getAttribute('data-category');
+                document.getElementById('category').value = selectedCategory;
+                document.querySelector('.category-button').textContent = selectedCategory;
+                document.getElementById('category-popup').classList.remove('show');
+                setTimeout(function() {
+                    document.getElementById('category-popup').style.display = 'none';
+                    document.querySelector('.category-sort-form').submit(); // Submit form on category selection
+                }, 300); // Wait for the animation to finish
+            });
+        });
+
+        document.querySelector('.close-popup').addEventListener('click', function() {
+            document.getElementById('category-popup').classList.remove('show');
+            setTimeout(function() {
+                document.getElementById('category-popup').style.display = 'none';
+            }, 300); // Wait for the animation to finish
+        });
+    </script>
 </body>
 </html>

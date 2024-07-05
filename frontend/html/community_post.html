@@ -1,0 +1,205 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="../css/community_post.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../html/community.html" class="back-arrow"><img src="../images/profile_edit/arrow left.png" alt="Back"></a>
+            <h1>커뮤니티</h1>
+            <div class="header-icons">
+                <a href="#"><img src="../images/community_post/vertical.png" alt="More Options"></a>
+            </div>
+        </header>
+
+        <div class="post">
+            <div class="post-header">
+                <span class="category-tag">교육 · 학문</span>
+                <div class="post-profile">
+                    <img src="../images/community_post/community_profile.png" alt="profile-image">
+                    <div class="post-profile-info">
+                        <span class="profile-name">히히 크로와상</span>
+                        <span class="profile-time">2일전</span>
+                    </div>
+                </div>
+                <h2>저 포함 5명 같이 토익 준비하실 분들 구해요</h2>
+                <p>같이 하면 혼자 하는 것보다 덜 풀어질 것 같아서 함께 토익 준비하실 분들 구합니다.
+                    오픈채팅방 만들어서 주 3회 이상 인증하면 좋을 것 같아요! </p>
+            </div>
+            <div class="post-stats">
+                <form id="like-form" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="like-button" data-post-id="1">
+                        <img src="../images/community_post/emptyheart.png" alt="Like" class="like-icon">
+                        <span class="like-count">21</span>
+                    </button>
+                </form>
+                <button class="comment-button">
+                    <img src="../images/community_post/community_chat.png" alt="Comment">
+                    <span class="comment-count">5</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="comments" id="comments-section">
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>밍기적 고양이</span>
+                    <p>저요! 2번 인증으로 할 예정입니다.</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>재빠른 고양이</span>
+                    <p>저요 ~!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>당당 고양이</span>
+                    <p>저요</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>매콤한 고양이</span>
+                    <p>저도요!</p>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="../images/community_post/community_profile2.png" alt="User">
+                <div class="comment-content">
+                    <span>히히 크로와상</span>
+                    <p>마감하겠습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="comment-form">
+            <div class="comment-input">
+                <input type="text" id="comment-text" placeholder="댓글을 작성해 보세요." required>
+                <button type="submit"><img src="../images/community_post/comment.png" alt="Send"></button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/community_post.js"></script>
+    <script>
+        // CSRF token function
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 폼 제출 방지
+
+            const commentText = document.getElementById('comment-text').value;
+            const postId = 1; // 여기에 포스트의 ID를 넣습니다.
+
+            // 백엔드 엔드포인트 URL을 입력
+            const url = '/api/comments/'; // 백엔드 엔드포인트 URL
+
+            // 서버로 데이터 전송
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken // CSRF 토큰 추가
+                },
+                body: JSON.stringify({ comment: commentText, post_id: postId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const commentsSection = document.getElementById('comments-section');
+                    const newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.innerHTML = `
+                        <img src="../images/community_post/community_profile2.png" alt="User">
+                        <div class="comment-content">
+                            <span>새로운 사용자</span>
+                            <p>${commentText}</p>
+                        </div>
+                    `;
+                    commentsSection.appendChild(newComment);
+                    document.getElementById('comment-form').reset();
+
+                    // 댓글 수 증가
+                    const commentCount = document.querySelector('.comment-count');
+                    commentCount.textContent = parseInt(commentCount.textContent) + 1;
+                } else {
+                    alert('댓글 작성에 실패했습니다.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.querySelector('.like-button').addEventListener('click', function() {
+            const likeIcon = this.querySelector('.like-icon');
+            const likeCount = this.querySelector('.like-count');
+            const postId = this.getAttribute('data-post-id');
+
+            // 백엔드 엔드포인트 URL을 입력
+            const url = '/api/likes/'; // 백엔드 엔드포인트 URL
+
+            // 서버로 데이터 전송
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken // CSRF 토큰 추가
+                },
+                body: JSON.stringify({ post_id: postId }) // 서버에 좋아요 요청
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // 좋아요 버튼 스타일 변경
+                    this.classList.toggle('active');
+
+                    // 빈 하트를 채워진 하트로 변경 및 숫자 증가/감소
+                    if (likeIcon.src.includes('emptyheart.png')) {
+                        likeIcon.src = '../images/community_post/fullheart.png';
+                        likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                    } else {
+                        likeIcon.src = '../images/community_post/emptyheart.png';
+                        likeCount.textContent = parseInt(likeCount.textContent) - 1;
+                    }
+
+                    // 보라색 테두리 추가
+                    if (this.classList.contains('active')) {
+                        this.style.border = '2px solid #8520EA';
+                    } else {
+                        this.style.border = 'none';
+                    }
+                } else {
+                    alert('좋아요 처리에 실패했습니다.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
