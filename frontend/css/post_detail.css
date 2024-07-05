@@ -1,0 +1,37 @@
+html {
+    background-color: whitesmoke;
+}
+body {
+    max-width: 420px;
+    font-family: 'pretendard';
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fbf8fe;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%;
+    background-color: #fbf8fe;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+p{
+   text-align: left; 
+   font-weight: bold;
+}
+button{
+    border-radius: 15px;
+    background-color: #fbf8fe;
+
+}
+a{
+    text-decoration: none;
+    color: #6F6B72;
+}
+.post{
+    border-radius: 15px;
+}
