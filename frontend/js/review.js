@@ -2,21 +2,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const stars = document.querySelectorAll(".starImage");
   const ratingInput = document.getElementById("rating");
 
-  stars.forEach((star) => {
-    star.addEventListener("click", function () {
-      const value = this.getAttribute("data-value");
-      ratingInput.value = value;
-      updateStars(value);
-    });
-  });
+  stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+      const rating = index + 1;
 
-  function updateStars(rating) {
-    stars.forEach((star) => {
-      if (star.getAttribute("data-value") <= rating) {
-        star.src = "../images/review/Star 5.png";
+      // Check if the clicked star is already active
+      if (star.classList.contains("purple") && ratingInput.value == rating) {
+        // Reset all stars to the original color
+        stars.forEach((s) => s.classList.remove("purple"));
+        ratingInput.value = 0; // Reset the rating value
       } else {
-        star.src = "../images/review/Star 5 (1).png";
+        // Set the rating value
+        ratingInput.value = rating;
+
+        // Update the stars to reflect the current rating
+        stars.forEach((s, i) => {
+          if (i < rating) {
+            s.classList.add("purple");
+          } else {
+            s.classList.remove("purple");
+          }
+        });
       }
     });
-  }
+  });
 });

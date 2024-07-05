@@ -11,6 +11,7 @@ body {
   background-color: #fbf8fe;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 800px;
 }
 .mainContainer {
   width: 100%;
