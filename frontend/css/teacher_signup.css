@@ -89,13 +89,6 @@ body {
     margin-top: 20px;
 }
 
-.crown-image {
-    position: absolute;
-    top: 10px;
-    right: 60px;
-    width: 36px;
-    height: 30px;
-}
 
 .card h3 {
     font-size: 20px;
@@ -180,4 +173,7 @@ body {
 
 .submit-button:hover {
     background-color: #8520EA;
+}
+span{
+    color: #8520EA;
 }
