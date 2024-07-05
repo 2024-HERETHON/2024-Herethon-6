@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/teacherProfile.css" />
+    <script src="../js/teacherProfile.js" defer></script>
+    <style>
+      .underline {
+        border-bottom: 2px solid #8520ea;
+        color: #8520ea;
+      }
+      .no-underline {
+        border-bottom: 2px solid #cdcad0;
+        color: #cdcad0;
+      }
+    </style>
   </head>
   <body>
     <div class="backgroundContainer">
       <div class="mainContainer">
         <div class="topContainer">
           <div class="message">MZ 티쳐 프로필</div>
-          <div class="closeButton">×</div>
+          <a href=""><div class="closeButton">×</div></a>
         </div>
         <div class="imageContainer">
           <img src="../images/teacherProfile/Group 178.png" />
@@ -25,19 +36,24 @@
         </div>
         <div class="middleContainer">
           <div class="middleContainerTop">
-            <div class="teachingPlan">티칭 계획</div>
-            <div class="runnerReview">러너 리뷰</div>
-          </div>
-          <div class="middleContainerMessage">
-            <div class="dot">●</div>
-            <div class="middleMessage">
-              초보자분들도 쉽게 배울 수 있는 기초 드로잉
+            <div
+              id="teachingPlan"
+              class="teachingPlan underline"
+              onclick="showContent('teachingPlan')"
+            >
+              티칭 계획
+            </div>
+            <div
+              id="runnerReview"
+              class="runnerReview no-underline"
+              onclick="showContent('runnerReview')"
+            >
+              러너 리뷰
             </div>
           </div>
-          <div class="middleContainerBox"></div>
-          <div class="teachingPlanKeyword">무료티칭</div>
+          <div id="contentBox" class="middleContainer"></div>
         </div>
-        <div class="matchingButton">1:1 매칭 신청하기</div>
+        <a href=""><div class="matchingButton">1:1 매칭 신청하기</div></a>
       </div>
     </div>
   </body>
