@@ -3,6 +3,7 @@ html {
 }
 
 body {
+<<<<<<< HEAD
   max-width: 420px;
   height: 100vh;
   margin: 0 auto;
@@ -12,6 +13,17 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: "pretendard";
+=======
+    max-width: 420px;
+    font-family: 'pretendard';
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fbf8fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+>>>>>>> 15d3033e598150b88e3525c39eb2ce27ebd753a7
 }
 
 .container {

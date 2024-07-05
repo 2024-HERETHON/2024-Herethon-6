@@ -3,6 +3,7 @@ html {
 }
 body {
     max-width: 420px;
+    font-family: 'pretendard';
     height: 100vh;
     margin: 0 auto;
     background-color: #fbf8fe;
@@ -237,4 +238,29 @@ header h1 {
 .comment-input img {
     width: 24px;
     height: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+.sort-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    right: 10px;
+    top: 40px;
+    z-index: 10;
+}
+
+.sort-dropdown a {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.sort-dropdown a:hover {
+    background-color: #f1f1f1;
 }
