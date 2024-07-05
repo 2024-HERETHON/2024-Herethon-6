@@ -114,6 +114,7 @@ body {
   grid-template-columns: 2fr 7fr;
   border-radius: 10px;
   margin-top: 30px;
+  position: relative;
 }
 .teacherIntroduce {
   grid-column: 2/4;
@@ -146,6 +147,7 @@ body {
   margin-top: 5px;
 }
 .navContainer {
+  margin-top: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -174,7 +176,6 @@ body {
 a {
   text-decoration: none;
 }
-
 .teacher1 img {
   width: 54px;
   height: 54px;
@@ -183,4 +184,11 @@ a {
   width: 45px;
   height: 45px;
   margin-top: 5px;
+}
+.nav-item.active img {
+  filter: grayscale(0%);
+}
+
+.nav-item.active {
+  color: #8520ea;
 }
