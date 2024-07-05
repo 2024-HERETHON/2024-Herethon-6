@@ -13,7 +13,11 @@
             <a href="../html/community.html" class="back-arrow"><img src="../images/profile_edit/arrow left.png" alt="Back"></a>
             <h1>커뮤니티</h1>
             <div class="header-icons">
-                <a href="#"><img src="../images/community_post/vertical.png" alt="More Options"></a>
+                <a href="#" id="more-options"><img src="../images/community_post/vertical.png" alt="More Options"></a>
+                <div id="options-menu" class="sort-dropdown hidden">
+                    <a href="">수정</a>
+                    <a href="">삭제</a>
+                </div>
             </div>
         </header>
 
@@ -199,6 +203,20 @@
                 }
             })
             .catch(error => console.error('Error:', error));
+        });
+        document.getElementById('more-options').addEventListener('click', function(event) {
+            event.preventDefault();
+            const optionsMenu = document.getElementById('options-menu');
+            optionsMenu.classList.toggle('hidden');
+        });
+
+        // 페이지의 다른 곳을 클릭하면 드롭다운 메뉴 숨기기
+        document.addEventListener('click', function(event) {
+            const optionsMenu = document.getElementById('options-menu');
+            const moreOptions = document.getElementById('more-options');
+            if (!moreOptions.contains(event.target) && !optionsMenu.contains(event.target)) {
+                optionsMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>
