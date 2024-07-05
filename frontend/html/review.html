@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +11,9 @@
       <div class="mainContainer">
         <div class="topContainer">
           <div class="reviewTitle">리뷰 작성</div>
-          <a href=""><img src="../images/review/Group 169.png" /></a>
+          <a href="close_page_url"
+            ><img src="../images/review/Group 169.png"
+          /></a>
         </div>
         <div class="teacherProfile">
           <a class="teacherImage" href=""
@@ -21,33 +22,55 @@
           <div class="teacherName">신의 손</div>
           <div class="teacherCatagory">미술/공예</div>
         </div>
-        <div class="teachStar">
-          <div class="teachSatisfy">티칭 만족도</div>
-          <div class="stars">
-            <img class="starImage" src="../images/review/Star 5.png" />
-            <img class="starImage" src="../images/review/Star 5.png" />
-            <img class="starImage" src="../images/review/Star 5.png" />
-            <img class="starImage" src="../images/review/Star 5.png" />
-            <img class="starImage" src="../images/review/Star 5.png" />
+        <form action="submit_review_url" method="POST">
+          <div class="teachStar">
+            <div class="teachSatisfy">티칭 만족도</div>
+            <div class="stars">
+              <img
+                class="starImage"
+                src="../images/review/Star 5.png"
+                data-value="1"
+              />
+              <img
+                class="starImage"
+                src="../images/review/Star 5.png"
+                data-value="2"
+              />
+              <img
+                class="starImage"
+                src="../images/review/Star 5.png"
+                data-value="3"
+              />
+              <img
+                class="starImage"
+                rc="../images/review/Star 5.png"
+                data-value="4"
+              />
+              <img
+                class="starImage"
+                src="../images/review/Star 5.png"
+                data-value="5"
+              />
+              <input type="hidden" id="rating" name="rating" required />
+            </div>
           </div>
-        </div>
-        <div class="teachReview">
-          <div class="reviewTitle">티칭에 대한 리뷰</div>
-          <div class="reviewBox">
-            <form action="#" name="review" method="get">
+          <div class="teachReview">
+            <div class="reviewTitle">티칭에 대한 리뷰</div>
+            <div class="reviewBox">
               <textarea
                 id="message"
+                name="message"
                 cols="30"
                 rows="10"
                 placeholder="리뷰를 작성해주세요."
                 required
               ></textarea>
-            </form>
+            </div>
           </div>
-        </div>
-        <div class="write">
-          <div class="writeButton">작성하기</div>
-        </div>
+          <div class="write">
+            <button type="submit" class="writeButton">작성하기</button>
+          </div>
+        </form>
       </div>
     </div>
 

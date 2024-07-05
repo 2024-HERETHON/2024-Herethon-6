@@ -1,17 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".starImage");
-  let currentIndex = 0;
+  const stars = document.querySelectorAll(".starImage");
+  const ratingInput = document.getElementById("rating");
 
-  images.forEach((img, index) => {
-    img.addEventListener("click", function () {
-      if (index === currentIndex) {
-        const originalSrc = "../images/review/Star 5.png";
-        const alternateSrc = "../images/review/Star 5 (1).png";
-
-        this.src = this.src.includes("(1)") ? originalSrc : alternateSrc;
-
-        currentIndex = (currentIndex + 1) % images.length;
-      }
+  stars.forEach((star) => {
+    star.addEventListener("click", function () {
+      const value = this.getAttribute("data-value");
+      ratingInput.value = value;
+      updateStars(value);
     });
   });
+
+  function updateStars(rating) {
+    stars.forEach((star) => {
+      if (star.getAttribute("data-value") <= rating) {
+        star.src = "../images/review/Star 5.png";
+      } else {
+        star.src = "../images/review/Star 5 (1).png";
+      }
+    });
+  }
 });

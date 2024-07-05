@@ -1,6 +1,9 @@
 html {
   background-color: whitesmoke;
 }
+body {
+  font-family: "pretendard";
+}
 .backgroundContainer {
   max-width: 420px;
   min-height: 100vh;
@@ -143,25 +146,27 @@ html {
 }
 .navContainer {
   display: flex;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 20px 20px 0 0;
-  height: 91px;
-  list-style-type: none;
-  padding-right: 40px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  position: fixed;
+  bottom: 0;
 }
-.navHome,
-.navTeaching,
-.navCommunity {
-  cursor: pointer;
+.nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  color: #a39fa6;
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
 }
-.navHome a,
-.navTeaching a,
-.navCommunity a {
+.nav-item a {
   text-decoration: none;
   color: #a39fa6;
 }
