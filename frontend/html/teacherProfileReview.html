@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/teacherProfileReview.css" />
+
+    <style>
+      .no-underline {
+        border-bottom: 2px solid #8520ea;
+        color: #8520ea;
+      }
+      .underline {
+        border-bottom: 2px solid #cdcad0;
+        color: #cdcad0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="backgroundContainer">
+      <div class="mainContainer">
+        <div class="topContainer">
+          <div class="message">MZ 티쳐 프로필</div>
+          <a href=""><div class="closeButton">×</div></a>
+        </div>
+        <div class="imageContainer">
+          <img src="../images/teacherProfile/Group 178.png" />
+          <div class="teacherName">신의 손</div>
+          <div class="teacherProperty">미술/공예</div>
+        </div>
+        <div class="teacherKeyword">
+          <div class="teacherKeyword1">열정적이에요</div>
+          <div class="teacherKeyword2">창의적이에요</div>
+        </div>
+        <div class="middleContainer">
+          <div class="middleContainerTop">
+            <a href="../html/teacherProfilePlan.html">
+              <div id="teachingPlan" class="teachingPlan underline">
+                티칭 계획
+              </div>
+            </a>
+            <a href="../html/teacherProfileReview.html"
+              ><div id="runnerReview" class="runnerReview no-underline">
+                러너 리뷰
+              </div></a
+            >
+          </div>
+
+          <div class="middleContainerMessage">
+            <div class="dot"></div>
+            <div class="middleMessage">
+              <div class="review">
+                <div class="reviewHeader">
+                  <span class="stars">★★★★★</span>
+                  <span class="divider">|</span>
+                  <span class="reviewer">한***** 러너</span>
+                </div>
+                <div class="reviewContent">
+                  피드백을 꼼꼼하게 해주셔서 너무 좋았어요. 그림을 너무 배우고
+                  싶었는데 덕분에 주변에서도 진짜 많이 늘었다고 칭찬을 많이
+                  받았습니다!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href=""><div class="matchingButton">1:1 매칭 신청하기</div></a>
+      </div>
+    </div>
+  </body>
+</html>
