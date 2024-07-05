@@ -41,24 +41,19 @@ input {
   background-repeat: no-repeat;
   background-position: 10px center;
 }
-.chat1,
-.chat2,
-.chat3 {
+.chat {
   display: grid;
   grid-template-columns: 1fr 8fr;
   padding: 15px;
 }
-.chat1name,
-.chat2name,
-.chat3name {
+.chatname {
   color: #454347;
   font-weight: bolder;
   padding-top: 15px;
   padding-left: 10px;
   font-size: 16px;
 }
-.chat2message,
-.chat3message {
+.chatmessage {
   grid-column: 2/3;
   color: #a39fa6;
   font-size: 14px;
@@ -73,10 +68,9 @@ input {
   justify-content: space-between;
   background-color: white;
   border-radius: 20px 20px 0 0;
-  height: 91px;
   list-style-type: none;
   padding-right: 40px;
-  position: absolute;
+  position: fixed;
   bottom: 0%;
 }
 .navHome,

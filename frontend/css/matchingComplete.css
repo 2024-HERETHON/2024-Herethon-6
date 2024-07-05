@@ -1,6 +1,9 @@
 html {
   background-color: whitesmoke;
 }
+body {
+  font-family: "pretendard";
+}
 .backgroundContainer {
   max-width: 420px;
   height: 100vh;

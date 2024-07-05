@@ -1,16 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".starImage");
-  let currentIndex = 0;
+  const stars = document.querySelectorAll(".starImage");
+  const ratingInput = document.getElementById("rating");
 
-  images.forEach((img, index) => {
-    img.addEventListener("click", function () {
-      if (index === currentIndex) {
-        const originalSrc = "../images/review/Star 5.png";
-        const alternateSrc = "../images/review/Star 5 (1).png";
+  stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+      const rating = index + 1;
 
-        this.src = this.src.includes("(1)") ? originalSrc : alternateSrc;
+      // Check if the clicked star is already active
+      if (star.classList.contains("purple") && ratingInput.value == rating) {
+        // Reset all stars to the original color
+        stars.forEach((s) => s.classList.remove("purple"));
+        ratingInput.value = 0; // Reset the rating value
+      } else {
+        // Set the rating value
+        ratingInput.value = rating;
 
-        currentIndex = (currentIndex + 1) % images.length;
+        // Update the stars to reflect the current rating
+        stars.forEach((s, i) => {
+          if (i < rating) {
+            s.classList.add("purple");
+          } else {
+            s.classList.remove("purple");
+          }
+        });
       }
     });
   });

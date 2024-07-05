@@ -1,13 +1,15 @@
 html {
   background-color: whitesmoke;
 }
+body {
+  font-family: "pretendard";
+}
 .backgroundContainer {
   max-width: 420px;
   height: 100vh;
   margin: 0 auto;
   background-color: #fbf8fe;
   display: flex;
-
   flex-wrap: wrap;
 }
 .mainContainer {
@@ -19,20 +21,26 @@ html {
   place-items: center;
   padding: 30px;
 }
+.reviewTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
 .teacherProfile {
   display: grid;
   grid-template-columns: 1fr 7fr;
   border-radius: 10px;
   margin-top: 30px;
-  grid-column: 1/3;
   padding: 30px;
 }
 .teacherCatagory {
   grid-column: 2/3;
   color: #a39fa6;
+  font-size: 14px;
 }
 .teacherName {
   margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
 .teacherImage {
   grid-row: 1/3;
@@ -40,12 +48,24 @@ html {
 }
 .teachStar {
   padding: 30px;
+  margin-top: 20px;
+}
+.teachSatisfy {
+  font-size: 18px;
+  font-weight: bold;
 }
 .stars {
   margin-top: 10px;
+  display: flex;
+}
+.starImage {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 .teachReview {
   padding: 30px;
+  margin-top: 20px;
 }
 .reviewBox {
   margin-top: 10px;
@@ -53,23 +73,25 @@ html {
 .write {
   display: flex;
   justify-content: center;
+  padding: 30px;
 }
 .writeButton {
   width: 314px;
   height: 50px;
   border-radius: 10px;
   background-color: #8520ea;
-  color: white;
   font-size: 14px;
   font-weight: bolder;
   line-height: 50px;
   text-align: center;
   margin: 10px;
+  cursor: pointer;
+  border: none;
 }
 textarea {
   border: none;
   min-height: 160px;
-  width: 330px;
+  width: 93%;
   box-shadow: 0px 4px 4px 0px rgb(236, 232, 240);
   resize: none;
   border-radius: 10px;
@@ -77,4 +99,16 @@ textarea {
   padding: 10px;
   color: #a39fa6;
   font-size: 14px;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #a39fa6;
+  font-size: 14px;
+  color: #a39fa6;
+  margin-top: 10px;
+}
+.starImage.purple {
+  content: url("../images/review/Star\ 5\ \(1\).png");
 }

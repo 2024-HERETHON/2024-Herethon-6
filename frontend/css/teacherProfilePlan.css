@@ -8,6 +8,7 @@ html {
   background-color: #fbf8fe;
   display: flex;
   flex-wrap: wrap;
+  font-family: "pretendard";
 }
 .mainContainer {
   width: 100%;

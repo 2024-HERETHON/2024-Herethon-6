@@ -1,85 +1,94 @@
-{% load static %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>커뮤니티</title>
-    <link rel="stylesheet" href="../css/community.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/community.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>커뮤니티</h1>
-            <div class="icon">
-                <a href="../html/runnerMypage.html">
-                    <img src="../images/community/user.png" alt="User Icon">
-                </a>
-            </div>
-        </header>
-
-        <form action="YOUR_BACKEND_ENDPOINT" method="GET" class="category-sort-form"> <!-- 백엔드 엔드포인트로 데이터를 전송 -->
-            <div class="category-section">
-                <button type="button" class="category-button">교육.학문</button>
-                <select name="sort" class="sort-dropdown" onchange="handleSortChange(this)">
-                    <option value="인기순">인기순</option>
-                    <option value="추천순">추천순</option>
-                </select>
-            </div>
-            <input type="hidden" name="category" id="category" value="교육.학문">
-        </form>
-
-        <div class="posts">
-            <a href="../html/community_post.html" class="post">
-                <p>저 포함 5명 같이 토익 준비하실 분들 구...</p>
-                <div class="tags">
-                    <span class="tag">교육 · 학문</span>
-                </div>
-                <div class="post-stats">
-                    <span><img src="../images/community/community1.png"></span>
-                </div>
-            </a>
-            <a href="post2.html" class="post">
-                <p>맞춤법 대결 *@*</p>
-                <div class="tags">
-                    <span class="tag">교육 · 학문</span>
-                </div>
-                <div class="post-stats">
-                    <span><img src="../images/community/community2.png"></span>
-                </div>
-            </a>
-            <a href="post3.html" class="post">
-                <p>각자 인생책 3권씩 남기고 가기</p>
-                <div class="tags">
-                    <span class="tag">교육 · 학문</span>
-                </div>
-                <div class="post-stats">
-                    <span><img src="../images/community/community3.png"></span>
-                </div>
-            </a>
+      <header>
+        <h1>커뮤니티</h1>
+        <div class="icon">
+          <a href="../html/runnerMypage.html">
+            <img src="../images/community/user.png" alt="User Icon" />
+          </a>
         </div>
+      </header>
 
-        <a href="write_post.html" class="write-button">
-            <img src="../images/community/writing.png" alt="Write Icon">
+      <form
+        action="YOUR_BACKEND_ENDPOINT"
+        method="GET"
+        class="category-sort-form"
+      >
+        <!-- 백엔드 엔드포인트로 데이터를 전송 -->
+        <div class="category-section">
+          <button type="button" class="category-button">교육.학문</button>
+          <select
+            name="sort"
+            class="sort-dropdown"
+            onchange="handleSortChange(this)"
+          >
+            <option value="인기순">인기순</option>
+            <option value="추천순">추천순</option>
+          </select>
+        </div>
+        <input type="hidden" name="category" id="category" value="교육.학문" />
+      </form>
+
+      <div class="posts">
+        <a href="../html/community_post.html" class="post">
+          <p>저 포함 5명 같이 토익 준비하실 분들 구...</p>
+          <div class="tags">
+            <span class="tag">교육 · 학문</span>
+          </div>
+          <div class="post-stats">
+            <span><img src="../images/community/community1.png" /></span>
+          </div>
         </a>
+        <a href="post2.html" class="post">
+          <p>맞춤법 대결 *@*</p>
+          <div class="tags">
+            <span class="tag">교육 · 학문</span>
+          </div>
+          <div class="post-stats">
+            <span><img src="../images/community/community2.png" /></span>
+          </div>
+        </a>
+        <a href="post3.html" class="post">
+          <p>각자 인생책 3권씩 남기고 가기</p>
+          <div class="tags">
+            <span class="tag">교육 · 학문</span>
+          </div>
+          <div class="post-stats">
+            <span><img src="../images/community/community3.png" /></span>
+          </div>
+        </a>
+      </div>
 
-        <nav class="bottom-nav">
-            <a href="../html/main.html" class="nav-item">
-                <img src="../images/community/home.png" alt="Community Icon">
-                <span>메인화면</span>
-            </a>
-            <a href="../html/mainChat.html" class="nav-item">
-                <img src="../images/community/teaching.png" alt="Community Icon">
-                <span>1:1 티칭</span>
-            </a>
-            <a href="../html/community.html" class="nav-item1">
-                <img src="../images/community/chat_active.png" alt="Community Icon">
-            </a>
-        </nav>
+      <a href="write_post.html" class="write-button">
+        <img src="../images/community/writing.png" alt="Write Icon" />
+      </a>
+
+      <nav class="bottom-nav">
+        <a href="../html/main.html" class="nav-item">
+          <img src="../images/community/home.png" alt="Community Icon" />
+          <span>메인화면</span>
+        </a>
+        <a href="../html/mainChat.html" class="nav-item">
+          <img src="../images/community/teaching.png" alt="Community Icon" />
+          <span>1:1 티칭</span>
+        </a>
+        <a href="../html/community.html" class="nav-item1">
+          <img src="../images/community/chat_active.png" alt="Community Icon" />
+        </a>
+      </nav>
     </div>
-<!-- 팝업 창 -->
-<div id="category-popup" class="popup">
-    <div class="popup-content">
+    <!-- 팝업 창 -->
+    <div id="category-popup" class="popup">
+      <div class="popup-content">
         <h2>카테고리를 선택하세요</h2>
         <a href="programming.html" class="category-option" data-category="기술.프로그래밍">기술.프로그래밍</a>
         <a href="design.html" class="category-option" data-category="크리에이티브.디자인">크리에이티브.디자인</a>
@@ -90,44 +99,49 @@
         <a href="life_skills.html" class="category-option" data-category="생활 스킬">생활 스킬</a>
         <a href="../html/community.html" class="category-option" data-category="교육.학문">교육.학문</a>
         <button type="button" class="close-popup">닫기</button>
+      </div>
     </div>
-</div>
     <script src="../js/community.js"></script>
     <script>
-        function handleSortChange(selectElement) {
-            var selectedValue = selectElement.value;
-            if (selectedValue === "인기순") {
-                window.location.href = "popular_posts.html"; // 인기순 링크
-            } else if (selectedValue === "추천순") {
-                window.location.href = "recommended_posts.html"; // 추천순 링크
-            }
+      function handleSortChange(selectElement) {
+        var selectedValue = selectElement.value;
+        if (selectedValue === "인기순") {
+          window.location.href = "popular_posts.html"; // 인기순 링크
+        } else if (selectedValue === "추천순") {
+          window.location.href = "recommended_posts.html"; // 추천순 링크
         }
+      }
 
-        document.querySelector('.category-button').addEventListener('click', function() {
-            document.getElementById('category-popup').style.display = 'flex';
-            setTimeout(function() {
-                document.getElementById('category-popup').classList.add('show');
-            }, 10); //CSS animation
+      document
+        .querySelector(".category-button")
+        .addEventListener("click", function () {
+          document.getElementById("category-popup").style.display = "flex";
+          setTimeout(function () {
+            document.getElementById("category-popup").classList.add("show");
+          }, 10); //CSS animation
         });
 
-        document.querySelectorAll('.category-option').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var selectedCategory = this.getAttribute('data-category');
-                document.getElementById('category').value = selectedCategory;
-                document.querySelector('.category-button').textContent = selectedCategory;
-                document.getElementById('category-popup').classList.remove('show');
-                setTimeout(function() {
-                    document.getElementById('category-popup').style.display = 'none';
-                }, 300); // Wait for the animation to finish
-            });
+      document.querySelectorAll(".category-option").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var selectedCategory = this.getAttribute("data-category");
+          document.getElementById("category").value = selectedCategory;
+          document.querySelector(".category-button").textContent =
+            selectedCategory;
+          document.getElementById("category-popup").classList.remove("show");
+          setTimeout(function () {
+            document.getElementById("category-popup").style.display = "none";
+          }, 300); // Wait for the animation to finish
         });
+      });
 
-        document.querySelector('.close-popup').addEventListener('click', function() {
-            document.getElementById('category-popup').classList.remove('show');
-            setTimeout(function() {
-                document.getElementById('category-popup').style.display = 'none';
-            }, 300); // Wait for the animation to finish
+      document
+        .querySelector(".close-popup")
+        .addEventListener("click", function () {
+          document.getElementById("category-popup").classList.remove("show");
+          setTimeout(function () {
+            document.getElementById("category-popup").style.display = "none";
+          }, 300); // Wait for the animation to finish
         });
     </script>
-</body>
+  </body>
 </html>
