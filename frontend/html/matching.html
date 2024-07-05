@@ -14,62 +14,30 @@
         <h4 class="sub-heading">등록하고자 하는 유형을 선택해주세요.</h4>
 
         <form id="matching-form" method="POST">
-        <div class="options">
-            <div class="option" id="teacher" onclick="selectOption('teacher')">
-                <img src="../images/matching/Graduated.png" alt="Teacher Icon">
-                <p>스킬을 나누고 싶다면?<br><strong>티처</strong></p>
-                <div class="checkmark">
-                    <img src="../images/matching_teacher/check.png" alt="checkmark">
+            <div class="options">
+                <div class="option" id="teacher" onclick="selectOption('teacher')">
+                    <img src="../images/matching/Graduated.png" alt="Teacher Icon">
+                    <p>스킬을 나누고 싶다면?<br><strong>티처</strong></p>
+                    <div class="checkmark">
+                        <img src="../images/matching_teacher/check.png" alt="checkmark">
+                    </div>
+                    <input type="radio" name="role" value="teacher" hidden>
                 </div>
-                <input type="radio" name="role" value="teacher" hidden>
-            </div>
-            <div class="option" id="runner" onclick="selectOption('runner')">
-                <img src="../images/matching/Pencil.png" alt="Runner Icon">
-                <p>배우고 싶은 분야가 있다면?<br><strong>러너</strong></p>
-                <div class="checkmark">
-                    <img src="../images/matching_teacher/check.png" alt="checkmark">
-                </div>
+                <div class="option" id="runner" onclick="selectOption('runner')">
+                    <img src="../images/matching/Pencil.png" alt="Runner Icon">
+                    <p>배우고 싶은 분야가 있다면?<br><strong>러너</strong></p>
+                    <div class="checkmark">
+                        <img src="../images/matching_teacher/check.png" alt="checkmark">
+                    </div>
                 <input type="radio" name="role" value="runner" hidden>
             </div>
         </div>
         <div class="account-link"><a href="">이미 가입한 계정이 있다면?</a></div>
-        <a href="next_page.html" class="next-button">다음으로</a>
+        <button type="submit" class="next-button">다음으로</button>
         </form>
     </div>
     <script src="../js/matching.js"></script>
     <script>
-        document.getElementById('matching-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // 폼 제출 방지
-
-            const selectedRole = document.querySelector('input[name="role"]:checked');
-            if (!selectedRole) {
-                alert('유형을 선택해주세요.');
-                return;
-            }
-
-            const formData = new FormData(this);
-
-            fetch('YOUR_BACKEND_ENDPOINT', {
-                method: 'POST',
-                headers: {
-                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = 'next_page.html';
-                } else {
-                    alert('오류가 발생했습니다. 다시 시도해주세요.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('오류가 발생했습니다. 다시 시도해주세요.');
-            });
-        });
-
         function selectOption(optionId) {
             document.querySelectorAll('.option').forEach(option => {
                 option.classList.remove('selected');
