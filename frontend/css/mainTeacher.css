@@ -168,3 +168,12 @@ html {
 a {
   text-decoration: none;
 }
+.teacher1 img {
+  width: 54px;
+  height: 54px;
+}
+.teacherA img {
+  width: 45px;
+  height: 45px;
+  margin-top: 5px;
+}
