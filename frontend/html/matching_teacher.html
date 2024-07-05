@@ -12,10 +12,10 @@
         
         <form action="YOUR_BACKEND_ENDPOINT" method="POST">
         <div class="section">
-            <p>저는 러닝할 때 이런 타입이에요.</p>
+            <p>저는 티칭할 때 이런 타입이에요.</p>
             <div class="options">
                 <div class="option">
-                    <input type="checkbox" id="option1" class="checkbox">
+                    <input type="checkbox" id="option1" name="personalities[]" value="1" class="checkbox">
                     <label for="option1" class="label">
                         <img src="../images/matching_teacher/clock.png" alt="러닝 타입1">
                         <span>꼼꼼해요</span>
@@ -23,7 +23,7 @@
                     </label>
                 </div>
                 <div class="option">
-                    <input type="checkbox" id="option2" class="checkbox">
+                    <input type="checkbox" id="option2" name="personalities[]" value="2" class="checkbox">
                     <label for="option2" class="label">
                         <img src="../images/matching_teacher/kind.png" alt="러닝 타입2">
                         <span>친절해요</span>
@@ -31,7 +31,7 @@
                     </label>
                 </div>
                 <div class="option">
-                    <input type="checkbox" id="option3" class="checkbox">
+                    <input type="checkbox" id="option3" name="personalities[]" value="3" class="checkbox">
                     <label for="option3" class="label">
                         <img src="../images/matching_teacher/strict.png" alt="러닝 타입3">
                         <span>엄격해요</span>
@@ -39,7 +39,7 @@
                     </label>
                 </div>
                 <div class="option">
-                    <input type="checkbox" id="option4" class="checkbox">
+                    <input type="checkbox" id="option4" name="personalities[]" value="4" class="checkbox">
                     <label for="option4" class="label">
                         <img src="../images/matching_teacher/passionate.png" alt="러닝 타입4">
                         <span>열정적이에요</span>
@@ -47,7 +47,7 @@
                     </label>
                 </div>
                 <div class="option">
-                    <input type="checkbox" id="option5" class="checkbox">
+                    <input type="checkbox" id="option5" name="personalities[]" value="5" class="checkbox">
                     <label for="option5" class="label">
                         <img src="../images/matching_teacher/creative.png" alt="러닝 타입5">
                         <span>창의적이에요</span>
@@ -65,23 +65,23 @@
                     <span>기술.프로그래밍</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill1" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill1" name="personalities[]" value="1" class="checkbox">
                             <label for="skill1" class="label">코딩</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill2" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill2" name="personalities[]" value="2" class="checkbox">
                             <label for="skill2" class="label">웹 개발</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill3" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill3" name="personalities[]" value="3" class="checkbox">
                             <label for="skill3" class="label">앱 개발</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill4" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill4" name="personalities[]" value="4" class="checkbox">
                             <label for="skill4" class="label">데이터 분석</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill5" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill5" name="personalities[]" value="5" class="checkbox">
                             <label for="skill5" class="label">사이버 보안</label>
                         </div>
                     </div>
@@ -91,23 +91,23 @@
                     <span>크리에이티브.디자인</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill6" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill6" name="personalities[]" value="6" class="checkbox">
                             <label for="skill6" class="label">그래픽 디자인</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill7" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill7" name="personalities[]" value="7" class="checkbox">
                             <label for="skill7" class="label">UI/UX 디자인</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill8" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill8" name="personalities[]" value="8" class="checkbox">
                             <label for="skill8" class="label">영상 편집</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill9" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill9" name="personalities[]" value="9" class="checkbox">
                             <label for="skill9" class="label">사진 촬영 및 편집</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill10" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill10" name="personalities[]" value="10" class="checkbox">
                             <label for="skill10" class="label">애니메이션 및 모션 그래픽</label>
                         </div>
                     </div>
@@ -117,19 +117,19 @@
                     <span>언어.문학</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill11" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill11" name="personalities[]" value="11" class="checkbox">
                             <label for="skill11" class="label">외국어</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill12" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill12" name="personalities[]" value="12" class="checkbox">
                             <label for="skill12" class="label">언어 및 통역</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill13" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill13" name="personalities[]" value="13" class="checkbox">
                             <label for="skill13" class="label">글쓰기</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill14" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill14" name="personalities[]" value="14" class="checkbox">
                             <label for="skill14" class="label">문법 및 교정</label>
                         </div>
                     </div>
@@ -139,23 +139,23 @@
                     <span>음악.예술</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill15" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill15" name="personalities[]" value="15" class="checkbox">
                             <label for="skill15" class="label">악기 연주</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill16" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill16" name="personalities[]" value="16" class="checkbox">
                             <label for="skill16" class="label">작곡 및 편곡</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill17" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill17" name="personalities[]" value="17" class="checkbox">
                             <label for="skill17" class="label">보컬 트레이닝</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill18" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill18" name="personalities[]" value="18" class="checkbox">
                             <label for="skill18" class="label">미술</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill19" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill19" name="personalities[]" value="19" class="checkbox">
                             <label for="skill19" class="label">공예</label>
                         </div>
                     </div>
@@ -165,23 +165,23 @@
                     <span>비즈니스.마케팅</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill20" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill20" name="personalities[]" value="20" class="checkbox">
                             <label for="skill20" class="label">디지털 마케팅</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill21" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill21" name="personalities[]" value="21" class="checkbox">
                             <label for="skill21" class="label">브랜드 전략</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill22" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill22" name="personalities[]" value="22" class="checkbox">
                             <label for="skill22" class="label">프로젝트 관리</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill23" name="skills[]" class="checkbox">
-                            <label for="skill23" class="label">소셜 미디어 관리리</label>
+                            <input type="checkbox" id="skill23" name="personalities[]" value="23" class="checkbox">
+                            <label for="skill23" class="label">소셜 미디어 관리</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill24" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill24" name="personalities[]" value="24" class="checkbox">
                             <label for="skill24" class="label">기업가 정신 및 스타트업</label>
                         </div>
                     </div>
@@ -191,23 +191,23 @@
                     <span>피트니스.웰빙</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill25" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill25" name="personalities[]" value="25" class="checkbox">
                             <label for="skill25" class="label">개인 트레이닝</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill26" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill26" name="personalities[]" value="26" class="checkbox">
                             <label for="skill26" class="label">요가</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill27" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill27" name="personalities[]" value="27" class="checkbox">
                             <label for="skill27" class="label">영상</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill28" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill28" name="personalities[]" value="28" class="checkbox">
                             <label for="skill28" class="label">영양 및 다이어트 상담</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill29" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill29" name="personalities[]" value="29" class="checkbox">
                             <label for="skill29" class="label">정신건강 코칭</label>
                         </div>
                     </div>
@@ -217,23 +217,23 @@
                     <span>생활 스킬</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill30" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill30" name="personalities[]" value="30" class="checkbox">
                             <label for="skill30" class="label">요리 및 베이킹</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill31" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill31" name="personalities[]" value="31" class="checkbox">
                             <label for="skill31" class="label">홈 리모델링</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill32" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill32" name="personalities[]" value="32" class="checkbox">
                             <label for="skill32" class="label">여행 계획</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill33" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill33" name="personalities[]" value="33" class="checkbox">
                             <label for="skill33" class="label">재무 관리 및 투자</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill34" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill34" name="personalities[]" value="34" class="checkbox">
                             <label for="skill34" class="label">정리 및 청소</label>
                         </div>
                     </div>
@@ -243,19 +243,19 @@
                     <span>교육.학문</span>
                     <div class="skill-options">
                         <div class="skill">
-                            <input type="checkbox" id="skill35" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill35" name="personalities[]" value="35" class="checkbox">
                             <label for="skill35" class="label">과외</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill36" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill36" name="personalities[]" value="36" class="checkbox">
                             <label for="skill36" class="label">시험 준비</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill37" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill37" name="personalities[]" value="37" class="checkbox">
                             <label for="skill37" class="label">연구 방법론</label>
                         </div>
                         <div class="skill">
-                            <input type="checkbox" id="skill38" name="skills[]" class="checkbox">
+                            <input type="checkbox" id="skill38" name="personalities[]" value="38" class="checkbox">
                             <label for="skill38" class="label">독서 토론</label>
                         </div>
                     </div>
