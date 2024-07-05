@@ -5,6 +5,7 @@ html {
 body {
   max-width: 420px;
   height: 100vh;
+  font-family: 'pretendard';
   margin: 0 auto;
   background-color: #fbf8fe;
   display: flex;

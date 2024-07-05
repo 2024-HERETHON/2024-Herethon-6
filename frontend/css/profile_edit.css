@@ -5,6 +5,7 @@ html {
     max-width: 420px;
     height: 100vh;
     margin: 0 auto;
+    font-family: 'pretendard';
     background-color: #fbf8fe;
     display: flex;
     justify-content: center;

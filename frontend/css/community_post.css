@@ -3,6 +3,7 @@ html {
 }
 body {
     max-width: 420px;
+    font-family: 'pretendard';
     height: 100vh;
     margin: 0 auto;
     background-color: #fbf8fe;

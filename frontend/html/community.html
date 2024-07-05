@@ -12,7 +12,7 @@
         <header>
             <h1>커뮤니티</h1>
             <div class="icon">
-                <a href="user_profile.html">
+                <a href="../html/runnerMypage.html">
                     <img src="../images/community/user.png" alt="User Icon">
                 </a>
             </div>
@@ -21,7 +21,7 @@
         <form action="YOUR_BACKEND_ENDPOINT" method="GET" class="category-sort-form"> <!-- 백엔드 엔드포인트로 데이터를 전송 -->
             <div class="category-section">
                 <button type="button" class="category-button">교육.학문</button>
-                <select name="sort" class="sort-dropdown" onchange="this.form.submit()">
+                <select name="sort" class="sort-dropdown" onchange="handleSortChange(this)">
                     <option value="인기순">인기순</option>
                     <option value="추천순">추천순</option>
                 </select>
@@ -64,15 +64,15 @@
         </a>
 
         <nav class="bottom-nav">
-            <a href="main.html" class="nav-item">
+            <a href="../html/main.html" class="nav-item">
                 <img src="../images/community/home.png" alt="Community Icon">
                 <span>메인화면</span>
             </a>
-            <a href="teaching.html" class="nav-item">
+            <a href="../html/mainChat.html" class="nav-item">
                 <img src="../images/community/teaching.png" alt="Community Icon">
                 <span>1:1 티칭</span>
             </a>
-            <a href="community.html" class="nav-item1">
+            <a href="../html/community.html" class="nav-item1">
                 <img src="../images/community/chat_active.png" alt="Community Icon">
             </a>
         </nav>
@@ -94,11 +94,20 @@
 </div>
     <script src="../js/community.js"></script>
     <script>
+        function handleSortChange(selectElement) {
+            var selectedValue = selectElement.value;
+            if (selectedValue === "인기순") {
+                window.location.href = "popular_posts.html"; // 인기순 링크
+            } else if (selectedValue === "추천순") {
+                window.location.href = "recommended_posts.html"; // 추천순 링크
+            }
+        }
+
         document.querySelector('.category-button').addEventListener('click', function() {
             document.getElementById('category-popup').style.display = 'flex';
             setTimeout(function() {
                 document.getElementById('category-popup').classList.add('show');
-            }, 10); // Slight delay to trigger CSS animation
+            }, 10); //CSS animation
         });
 
         document.querySelectorAll('.category-option').forEach(function(button) {
@@ -109,7 +118,6 @@
                 document.getElementById('category-popup').classList.remove('show');
                 setTimeout(function() {
                     document.getElementById('category-popup').style.display = 'none';
-                    document.querySelector('.category-sort-form').submit(); // Submit form on category selection
                 }, 300); // Wait for the animation to finish
             });
         });
